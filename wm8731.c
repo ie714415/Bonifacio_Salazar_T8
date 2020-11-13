@@ -49,7 +49,7 @@ freertos_i2c_flag_t wm8731_init(void)
 		wm8731_sucess = freertos_i2c_transmit(WM8731_i2c_config.i2c_number, data , 2, WM8731_SLAVE_ADDRESS);
 		vTaskDelay(pdMS_TO_TICKS(I2C_DELAY));
 
-		data[0] = WM8731_ANALOGUE_AUDIO;
+		data[0] = WM8731_CODEC_ENABLE;
 		data[1] = 0x01;
 		wm8731_sucess = freertos_i2c_transmit(WM8731_i2c_config.i2c_number, data , 2, WM8731_SLAVE_ADDRESS);
 		vTaskDelay(pdMS_TO_TICKS(I2C_DELAY));
